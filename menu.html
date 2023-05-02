@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RestaurantApp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/-Login-form-Page-BS4--Login-form-Page-BS4.css">
+    <link rel="stylesheet" href="assets/css/Landing-Page---Parallax-Background---Logo-Heading-ButtonGIF.css">
+    <link rel="stylesheet" href="assets/css/Lista-Productos-Canito.css">
+    <link rel="stylesheet" href="assets/css/Projects-Grid-Horizontal-images.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu-sidebar.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+  </head>
+  <body>
+    <style>
+      /* Container for the notification elements */
+      .notification-container {
+        position: fixed;
+        /* Positioned fixed to stay in place when scrolling */
+        bottom: 0;
+        /* Positioned at the bottom of the screen */
+        left: 50%;
+        /* Positioned in the horizontal centre of the screen */
+        transform: translateX(-50%);
+        /* Centres the container horizontally */
+        z-index: 9999;
+        /* Positioned in front of everything else */
+        pointer-events: none;
+        /* Disables user interactions with the container */
+      }
+
+      /* Notification element styles */
+      .notification {
+        position: relative;
+        /* Positioned relative to the container */
+        background-color: #4CAF50;
+        /* Green background colour */
+        color: white;
+        /* White text colour */
+        padding: 15px;
+        /* Padding around the text */
+        font-size: 20px;
+        /* Font size of the text */
+        font-weight: bold;
+        /* Bold font weight */
+        opacity: 0;
+        /* Starts off invisible */
+        animation: fadeIn 0.5s ease-in-out forwards;
+        /* Fade-in animation */
+        margin-top: 10px;
+        /* Adds space between notifications */
+        border-radius: 10px;
+        /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        /* Drop shadow effect */
+        pointer-events: auto;
+        /* Enables user interactions with the notification */
+        display: flex;
+        /* Allows the text to be centered vertically and horizontally */
+        align-items: center;
+        /* Centers the text vertically */
+        justify-content: center;
+        /* Centers the text horizontally */
+        width: 400px;
+        /* Sets the width of the notification */
+        height: 80px;
+        /* Sets the height of the notification */
+        text-align: center;
+        /* Centers the text horizontally */
+        word-wrap: break-word;
+        /* Breaks long words onto multiple lines */
+      }
+
+      /* Fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Fade-out animation */
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+    <div class="notification-container" id="notification-container"></div>
+    <div class="container py-4 py-xl-5">
+      <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2>Let's Eat</h2>
+          <p style="margin-bottom: 53px;">Select from our full range of products here, add them to your basket then continue to your payment. Please note that we operate a challenge 25 policy, and if you are lucky enough to look under 25 our staff will ask for ID.</p>
+          <a class="btn btn-primary" role="button" href="basket.html">Go to Basket</a>
+          <a class="btn btn-warning" role="button" onclick="alert('A waiter will come soon to table '+prompt('Please enter your table number.')+'.');">Call waiter</a>
+          <h2>Sandwiches</h2>
+        </div>
+      </div>
+      <div class="row gy-4 row-cols-1 row-cols-md-2">
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/ClubSandwitch.png">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Club Sandwitch</h4>
+              <p>Our signature sandwich, is a sandwich of toasted bread, sliced cooked poultry, fried bacon, lettuce, tomato, and mayonnaise. Served with fries and coleslaw.&nbsp;</p>
+              <button class="btn btn-primary" id="menuButton1" type="button">Add to order (14.99)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/FFSandwitch.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Battered Cod</h4>
+              <p>Our fresh hand caught and seasoned cod lightly battered in beer batter and pressed between two slices of fresh white tiger bread, served with Mayonnaise and a side of salad.</p>
+              <button class="btn btn-primary" id="menuButton2" type="button">Add to order (9.99)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/HnCSandwitch.webp">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Toasted Ham and Cheese</h4>
+              <p>Mild Cheshire Cheddar Cheese and Honey glazed Ham toasted to golden brown and served with hand cooked crisps and a side of salad.</p>
+              <button class="btn btn-primary" id="menuButton3" type="button">Add to order (7.50)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/CSSandwich.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Chicken and Stuffing</h4>
+              <p>Our famous locally sourced free range chicken, sage and onion stuffing and lettuce all neatly wrapped inside a warm white roll.&nbsp;</p>
+              <button class="btn btn-primary" id="menuButton4" type="button">Add to order (9.99)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+      <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2>Mains</h2>
+        </div>
+      </div>
+      <div class="row gy-4 row-cols-1 row-cols-md-2">
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/lasagne.webp">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Lasagne</h4>
+              <p>A simple lasagne, alternating layers of minced beef, tomato sauce and Cheshire mild cheddar cheese. Served with chips and a side of salad.</p>
+              <button class="btn btn-primary" id="menuButton5" type="button">Add to order (12.00)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/pizza.jpeg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Pizza</h4>
+              <p>Your choice of any 3 toppings with a base of freshly prepared tomato sauce on hand made and stretched sour-dough. This item is cooked in a separate kitchen so my arrive at your table before your other food.</p>
+              <button class="btn btn-primary" id="menuButton6" type="button">Add to order (12.00)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/gammonegg.jpeg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Gammon and Egg</h4>
+              <p>A country classic - Black Treacle Gammon and free range eggs served with garden peas and hand cut chips.</p>
+              <button class="btn btn-primary" id="menuButton7" type="button">Add to order (12.50)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/burger.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Loaded quattro formaggi burger</h4>
+              <p>A local&nbsp;favourite, one Angus beef burger patty paired with a four cheese blend, tomatoes, dill pickles, lettuce and burger relish. Served with hand cut chips.</p>
+              <button class="btn btn-primary" id="menuButton8" type="button">Add to order (12.50)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4 py-xl-5">
+      <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center mx-auto">
+          <h2>Sides</h2>
+        </div>
+      </div>
+      <div class="row gy-4 row-cols-1 row-cols-md-2">
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/hcc.jpeg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Hand Cut "Chunky" Chips</h4>
+              <p>Lightly salted and triple fried, these chips are light and fluffy inside, but crunchy on the outside.</p>
+              <button class="btn btn-primary" id="menuButton9" type="button">Add to order (2.50)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/Side_Salad.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Side Salad</h4>
+              <p>Salad containing sliced carrots, cherry tomatoes, lettuce, rocket, spinach and red onions.</p>
+              <button class="btn btn-primary" id="menuButton10" type="button">Add to order (1.00)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/Mozzarella.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Mozzarella Sticks</h4>
+              <p>Crunchy bread battered mozzarella served with our tomato base from our pizzas.</p>
+              <button class="btn btn-primary" id="menuButton11" type="button">Add to order (12.50)</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex flex-column flex-lg-row">
+            <div class="w-100">
+              <img class="rounded img-fluid d-block w-100 fit-cover" style="height: 225px;" src="assets/img/Onionrings.jpg">
+            </div>
+            <div class="py-4 py-lg-0 px-lg-4" style="width: 100%;">
+              <h4>Onion Rings</h4>
+              <p>Thick cut white onion battered in beer and fried until golden brown.</p>
+              <button class="btn btn-primary" id="menuButton12" type="button">Add to order (2.50)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/MainScript.js"></script>
+    <script src="assets/js/Sidebar-Menu-sidebar.js"></script>
+  </body>
+</html>
